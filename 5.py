@@ -10,7 +10,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import r2_score, mean_squared_error
 
 # Load data
-data = pd.read_csv("US_graduate_schools_admission_parameters_dataset.csv")
+data = pd.read_csv("Admission.csv")
 
 # STRIP all column names to remove spaces
 data.columns = data.columns.str.strip()
@@ -52,3 +52,4 @@ for name, model in models.items():
     r2 = r2_score(y_test, y_pred)
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
     print(f"{name:20s} R²: {r2:.3f}  RMSE: {rmse:.3f}")
+
